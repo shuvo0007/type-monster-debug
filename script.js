@@ -27,7 +27,7 @@ const typeController = (e) => {
 
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
-    errorCount++;
+
     return display.removeChild(display.lastChild);
   }
 
@@ -63,8 +63,10 @@ const typeController = (e) => {
 const validate = (key) => {
   if (key === questionText[userText.length - 1]) {
     return true;
+  } else {
+    errorCount++;
+    return false;
   }
-  return false;
 };
 
 // FINISHED TYPING
